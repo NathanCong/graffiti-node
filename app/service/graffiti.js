@@ -57,7 +57,7 @@ class GraffitiService extends Service {
           await this.createDir(writeDirPath);
         }
         await this.writeFile(writeFilePath, dataBuffer);
-        resolve({ imageURL: `//${ctx.req.headers.host}/${imageFilePath}` });
+        resolve({ imageURL: `http://${ctx.req.headers.host}/${imageFilePath}` });
       } catch (error) {
         console.error(error);
         reject(new Error('save image failure'));
@@ -75,7 +75,7 @@ class GraffitiService extends Service {
         if (Array.isArray(images) && images.length > 0) {
           imageName = images.pop();
         }
-        resolve({ imageURL: `//${ctx.req.headers.host}/public/images/${imageName}` });
+        resolve({ imageURL: `http://${ctx.req.headers.host}/public/images/${imageName}` });
       } catch (error) {
         console.error(error);
         reject(new Error('query images failure'));
