@@ -20,9 +20,7 @@ module.exports = appInfo => {
 
   // add your security config here
   config.security = {
-    csrf: {
-      headerName: 'x-csrf-token'
-    }
+    csrf: false
   };
 
   // add your user config here
