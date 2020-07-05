@@ -18,6 +18,13 @@ module.exports = appInfo => {
   // add your middleware config here
   config.middleware = [];
 
+  // add your security config here
+  config.security = {
+    csrf: {
+      headerName: 'x-csrf-token'
+    }
+  };
+
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',

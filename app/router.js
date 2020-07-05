@@ -5,5 +5,8 @@
  */
 module.exports = app => {
   const { router, controller } = app;
-  router.get('/', controller.home.index);
+  // 上传接口
+  router.post('/graffiti/upload', controller.graffiti.upload);
+  // 下载接口
+  router.get('/graffiti/download', controller.graffiti.download);
 };
